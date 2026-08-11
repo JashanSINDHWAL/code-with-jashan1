@@ -1,0 +1,357 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(180deg,#fffdfb,#fff8f7,#fff3f5);
+    font-family:"Poppins",sans-serif;
+}
+
+#tracker{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.proposal-card{
+    position:relative;
+    width:440px;
+    height:560px;
+    border-radius:30px;
+    overflow:hidden;
+    background:url("back2.png") center/100% 100% no-repeat;
+    box-shadow:0 20px 50px rgba(0,0,0,.28);
+    transition:.45s ease;
+}
+
+.proposal-card.fade-out{
+    opacity:0;
+    transform:scale(.65);
+    pointer-events:none;
+}
+
+#yesBtn,
+.escape-btn{
+
+    position:absolute;
+
+    width:140px;
+    height:50px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+
+    border:none;
+    border-radius:22px;
+
+    cursor:pointer;
+
+    font-size:20px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+#yesBtn{
+
+    left:70px;
+    top:475px;
+
+    color:#fff;
+
+    border:2px solid #ff8ca7;
+
+    background:linear-gradient(
+        180deg,
+        #ffd4de,
+        #ff9ab4,
+        #ff6d91
+    );
+
+    box-shadow:
+    inset 0 3px 0 rgba(255,255,255,.85),
+    inset 0 -3px 0 rgba(211,58,102,.45),
+    0 8px 18px rgba(255,108,150,.35);
+
+}
+
+.escape-btn{
+
+    left:225px;
+    top:475px;
+
+    color:#4a2318;
+
+    border:2px solid #efc896;
+
+    background:linear-gradient(
+        180deg,
+        #fffdf9,
+        #fff3df
+    );
+
+    box-shadow:
+    inset 0 3px 0 rgba(255,255,255,.95),
+    inset 0 -3px 0 rgba(235,206,166,.65),
+    0 8px 18px rgba(216,180,125,.28);
+
+}
+
+#yesBtn:hover,
+.escape-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+#yesBtn:active,
+.escape-btn:active{
+
+    transform:translateY(1px);
+
+}
+
+.fade-out{
+
+    opacity:0;
+
+    transform:scale(.7);
+
+    transition:.45s;
+
+    pointer-events:none;
+
+}
+
+#celebration{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    z-index:999;
+
+}
+
+#successImage{
+
+    width:440px;
+
+    height:560px;
+
+    border-radius:30px;
+
+    background:url("prp2.png") center/100% 100% no-repeat;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.28);
+
+    opacity:0;
+
+    transform:scale(.6);
+
+    transition:.45s ease;
+
+}
+
+
+.hearts{
+
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+
+}
+
+.heart{
+
+    position:absolute;
+    bottom:-60px;
+
+    font-size:24px;
+
+    animation:heartFall linear forwards;
+
+}
+
+@keyframes heartFall{
+
+    from{
+
+        transform:translateY(0) scale(.8);
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+
+    }
+
+}
+
+
+
+.left-balloons,
+.right-balloons{
+
+    position:absolute;
+
+    top:0;
+
+    width:120px;
+    height:100%;
+
+    pointer-events:none;
+    overflow:hidden;
+
+}
+
+.left-balloons{
+
+    left:0;
+
+}
+
+.right-balloons{
+
+    right:0;
+
+}
+
+.balloon{
+
+    position:absolute;
+
+    bottom:-120px;
+
+    font-size:40px;
+
+    animation:balloonUp linear forwards;
+
+}
+
+@keyframes balloonUp{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-130vh);
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+.proposal-card,
+#successImage{
+
+    width:360px;
+    height:460px;
+
+}
+
+#yesBtn{
+
+    left:45px;
+    top:385px;
+
+}
+
+.escape-btn{
+
+    left:190px;
+    top:385px;
+
+}
+
+#yesBtn,
+.escape-btn{
+
+    width:125px;
+    height:46px;
+
+    font-size:18px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.proposal-card,
+#successImage{
+
+    width:92vw;
+    height:118vw;
+    max-height:540px;
+
+}
+
+#yesBtn,
+.escape-btn{
+
+    width:115px;
+    height:44px;
+
+    font-size:17px;
+
+}
+
+#yesBtn{
+
+    left:8%;
+    top:84%;
+
+}
+
+.escape-btn{
+
+    left:55%;
+    top:84%;
+
+}
+
+}
+
+@media(max-width:360px){
+
+#yesBtn,
+.escape-btn{
+
+    width:105px;
+    font-size:16px;
+
+}
+
+}
